@@ -13,47 +13,56 @@
         <h1>No.3 Rashna Expense System</h1>
     </header>
 
-    <!-- Forms for user input -->
-    <form id="add-expense-form">
-        <h3>Add Expense</h3>
-        <input type="text" id="expense-detail" placeholder="Expense Detail" required>
-        <input type="number" id="expense-amount" placeholder="Amount" step="0.01" required>
-        <button type="submit">Add Expense</button>
-    </form>
+    <!-- Add Expense Form -->
+    <section class="form-section">
+        <form id="add-expense-form">
+            <h3>Add Expense</h3>
+            <input type="text" id="expense-detail" placeholder="Expense Detail" required>
+            <input type="number" id="expense-amount" placeholder="Amount (RM)" step="0.01" required>
+            <button type="submit">Add Expense</button>
+        </form>
+    </section>
 
-    <form id="add-tenant-form">
-        <h3>Add Tenant</h3>
-        <input type="text" id="tenant-name" placeholder="Tenant Name" required>
-        <button type="submit">Add Tenant</button>
-    </form>
+    <!-- Add Tenant Form -->
+    <section class="form-section">
+        <form id="add-tenant-form">
+            <h3>Add Tenant</h3>
+            <input type="text" id="tenant-name" placeholder="Tenant Name" required>
+            <button type="submit">Add Tenant</button>
+        </form>
+    </section>
 
-    <!-- Table for displaying expenses -->
-    <h3 style="text-align: center;">Expense Summary</h3>
-    <table id="expense-table">
-        <thead>
-            <tr>
-                <th>Expense Detail</th>
-                <th>Amount (RM)</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Data will be dynamically inserted here -->
-        </tbody>
-    </table>
+    <!-- Expense Table -->
+    <section class="table-section">
+        <h3>Expense Summary</h3>
+        <table id="expense-table">
+            <thead>
+                <tr>
+                    <th>Expense Detail</th>
+                    <th>Amount (RM)</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data dynamically rendered here -->
+            </tbody>
+        </table>
+    </section>
 
     <!-- Summary Section -->
-    <p id="total-expense"><strong>Total Expense: RM 0.00</strong></p>
-    <p id="total-tenants"><strong>Total Tenants: 0</strong></p>
-    <p id="share-per-tenant"><strong>Share per Tenant: RM 0.00</strong></p>
+    <section class="summary-section">
+        <p><strong>Total Expense: </strong><span id="total-expense">RM 0.00</span></p>
+        <p><strong>Total Tenants: </strong><span id="total-tenants">0</span></p>
+        <p><strong>Share per Tenant: </strong><span id="share-per-tenant">RM 0.00</span></p>
+    </section>
 
-    <!-- Buttons -->
-    <div class="card">
+    <!-- Action Buttons -->
+    <section class="card">
         <button id="view-statistics">View Expense Statistics</button>
         <button id="generate-pdf">Generate PDF</button>
-    </div>
+    </section>
 
-    <!-- Modal for Pie Chart -->
+    <!-- Modal for Chart -->
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
