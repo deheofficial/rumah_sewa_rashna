@@ -33,7 +33,7 @@
     </section>
 
     <!-- Expense Table -->
-    <section class="table-section">
+    <section class="card">
         <h3>Expense Summary</h3>
         <table id="expense-table">
             <thead>
@@ -50,7 +50,7 @@
     </section>
 
     <!-- Summary Section -->
-    <section class="summary-section">
+    <section class="card">
         <p><strong>Total Expense: </strong><span id="total-expense">RM 0.00</span></p>
         <p><strong>Total Tenants: </strong><span id="total-tenants">0</span></p>
         <p><strong>Share per Tenant: </strong><span id="share-per-tenant">RM 0.00</span></p>
@@ -61,6 +61,15 @@
         <button id="view-statistics">View Expense Statistics</button>
         <button id="generate-pdf">Generate PDF</button>
     </section>
+
+<!-- QR Code Section -->
+<section class="card">
+    <p style="margin-top: 10px; font-size: 1.2em; font-weight: bold; color: #333;">
+        Make payment to Mr. Adib by this QR
+    </p>
+    <img src="qr.jpg" alt="QR Code for Payment" style="width: 300px; height: auto; display: block; margin: 0 auto;">
+</section>
+
 
     <!-- Modal for Chart -->
     <div id="myModal" class="modal">
