@@ -2,7 +2,7 @@
 header("Content-Type: application/json");
 
 // Database connection
-$conn = new mysqli("localhost", "root", "", "house_expenses");
+$conn = new mysqli("sql103.infinityfree.com", "if0_37832503", "GRKYdHO8m0", "if0_37832503_house_expenses");
 
 if ($conn->connect_error) {
     die(json_encode(['status' => 'error', 'message' => 'Database connection failed']));
