@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly Expenses</title>
+    <link rel="stylesheet" href="styles.css"> <!-- External CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js CDN -->
+    <script src="scripts.js" defer></script> <!-- External JS -->
+</head>
+<body>
+    <header>
+        <h1>No.3 Rashna Expense System</h1>
+    </header>
+
+    <!-- Forms for user input -->
+    <form id="add-expense-form">
+        <h3>Add Expense</h3>
+        <input type="text" id="expense-detail" placeholder="Expense Detail" required>
+        <input type="number" id="expense-amount" placeholder="Amount" step="0.01" required>
+        <button type="submit">Add Expense</button>
+    </form>
+
+    <form id="add-tenant-form">
+        <h3>Add Tenant</h3>
+        <input type="text" id="tenant-name" placeholder="Tenant Name" required>
+        <button type="submit">Add Tenant</button>
+    </form>
+
+    <!-- Table for displaying expenses -->
+    <h3 style="text-align: center;">Expense Summary</h3>
+    <table id="expense-table">
+        <thead>
+            <tr>
+                <th>Expense Detail</th>
+                <th>Amount (RM)</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data will be dynamically inserted here -->
+        </tbody>
+    </table>
+
+    <!-- Summary Section -->
+    <p id="total-expense"><strong>Total Expense: RM 0.00</strong></p>
+    <p id="total-tenants"><strong>Total Tenants: 0</strong></p>
+    <p id="share-per-tenant"><strong>Share per Tenant: RM 0.00</strong></p>
+
+    <!-- Buttons -->
+    <div class="card">
+        <button id="view-statistics">View Expense Statistics</button>
+        <button id="generate-pdf">Generate PDF</button>
+    </div>
+
+    <!-- Modal for Pie Chart -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Expense Distribution</h3>
+            <canvas id="pieChart"></canvas>
+        </div>
+    </div>
+</body>
+</html>
