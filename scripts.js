@@ -118,18 +118,22 @@ document.querySelector(".close").addEventListener("click", () => {
     document.getElementById("myModal").style.display = "none";
 });
 
-document.getElementById('generate-pdf').addEventListener('click', function() {
-    // Send an AJAX request to generate the image (PHP script)
-    fetch('generate_pdf.php')
-        .then(response => response.blob())  // Receive the image as a Blob
-        .then(imageBlob => {
-            // Create a URL for the Blob and open it in a new window
-            const imageUrl = URL.createObjectURL(imageBlob);
-            const newWindow = window.open();
-            newWindow.document.write('<img src="' + imageUrl + '" />'); // Display the image in the new window
+document.getElementById("generate-pdf").addEventListener("click", () => {
+    // Make an AJAX request to generate the PDF
+    fetch("generate_pdf.php")
+        .then(response => response.blob())  // Handle PDF as a blob response
+        .then(pdfBlob => {
+            // Create a link element
+            const link = document.createElement("a");
+            // Create an object URL for the blob
+            link.href = URL.createObjectURL(pdfBlob);
+            // Set the download attribute to specify the file name
+            link.download = "Monthly_Expense_Report.pdf";
+            // Trigger a click event to download the PDF
+            link.click();
         })
         .catch(error => {
-            console.error('Error generating PDF:', error);
+            console.error("Error generating PDF:", error);
         });
 });
 
